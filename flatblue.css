@@ -145,6 +145,15 @@ input {
 	border: 0;
 }
 
+#stylesheet_contents {
+	font-family: Consolas, Monaco, monospace;
+	padding: 12px;
+	background-color: #333;
+	color: #EEE;
+	border: 8px solid #333;
+	width: 97%;
+}
+
 /* Make distinguished users stand out more (mods, op and friends) */
 .tagline .author.submitter {
 	color: white !important;
