@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.0 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.1 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -1122,14 +1122,14 @@ body .morelink:hover {
 .submit-link .morelink {
     background: url(%%sprite-icon-32%%) no-repeat top left;
     background-position: 2px -12935px;
-    width: 266px;
+    width: 262px;
     background-color: #4BA6E0;
 }
 
 .submit-text .morelink {
     background: url(%%sprite-icon-32%%) no-repeat top left;
     background-position: 2px -2177px;
-    width: 266px;
+    width: 262px;
     background-color: #4BA6E0;
 }
 
@@ -1329,7 +1329,7 @@ Most things flair related
 }
 
 .title .linkflairlabel {
-	display: block;
+	display: table;
 	background-color: transparent;
 	border-width: 0px;
 	border-radius: 0px;
@@ -1338,7 +1338,7 @@ Most things flair related
 	text-transform: uppercase;
 	font-weight: normal;
 	overflow: visible;
-	max-width: 10em;
+	max-width: 98%;
 }
 
 .thing.linkflair .entry {
@@ -1346,7 +1346,7 @@ Most things flair related
 }
 
 .thing.linkflair .linkflairlabel {
-	border-bottom: solid 1px #808080;
+	border-bottom: solid 2px #808080;
 }
 
 .thing.linkflair.linkflair-a .entry, .flairselector .linkflair-a {
@@ -1354,7 +1354,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-a .linkflairlabel {
-	border-bottom: solid 1px #E18879;
+	border-bottom: solid 2px #E18879;
 }
 
 .thing.linkflair.linkflair-b .entry, .flairselector .linkflair-b {
@@ -1362,7 +1362,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-b .linkflairlabel {
-	border-bottom: solid 1px #e1aa79;
+	border-bottom: solid 2px #e1aa79;
 }
 
 .thing.linkflair.linkflair-c .entry, .flairselector .linkflair-c {
@@ -1370,7 +1370,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-c .linkflairlabel {
-	border-bottom: solid 1px #bbe179;
+	border-bottom: solid 2px #bbe179;
 }
 
 .thing.linkflair.linkflair-d .entry, .flairselector .linkflair-d {
@@ -1378,7 +1378,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-d .linkflairlabel {
-	border-bottom: solid 1px #79e1d1;
+	border-bottom: solid 2px #79e1d1;
 }
 
 .thing.linkflair.linkflair-e .entry, .flairselector .linkflair-e {
@@ -1386,7 +1386,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-e .linkflairlabel {
-	border-bottom: solid 1px #e1db79;
+	border-bottom: solid 2px #e1db79;
 }
 
 .thing.linkflair.linkflair-f .entry, .flairselector .linkflair-f {
@@ -1394,7 +1394,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-f .linkflairlabel {
-	border-bottom: solid 1px #b179e1;
+	border-bottom: solid 2px #b179e1;
 }
 
 .thing.linkflair.linkflair-g .entry, .flairselector .linkflair-g {
@@ -1402,7 +1402,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-g .linkflairlabel {
-	border-bottom: solid 1px #FCDFFF;
+	border-bottom: solid 2px #FCDFFF;
 }
 
 /* not enough flairs?  Simply copy the following text and change <CLASS>  to whatever class you want to name the flair and <COLOR> to a valid hex color (#ff0000 for example)
@@ -1412,7 +1412,7 @@ Most things flair related
 }
 
 .thing.linkflair.linkflair-<CLASS> .linkflairlabel {
-	border-bottom: solid 1px <COLOR>;
+	border-bottom: solid 2px <COLOR>;
 }
 
 */ 
@@ -2966,6 +2966,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.0 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.1 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
