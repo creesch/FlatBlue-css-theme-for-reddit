@@ -250,7 +250,7 @@ header area
 
 /* Background image and color for the header */
 #header {
-	background: url(%%header-blue%%) no-repeat bottom left;
+	background: url(%%header-blue2%%) no-repeat bottom left;
 	background-color: #479DD3;
 	border: 0;
 }
@@ -401,7 +401,7 @@ body:not(.search-page) #search input[type="text"] {
 	position: absolute;
 	z-index: 200;
 	width: 165px;
-	left: 5px;
+	left: 13px;
 	background: #ffffff;
 	border: 1px;
 	height: 22px;
@@ -430,7 +430,7 @@ body:not(.search-page) #search input[type="text"] {
 /* Anouncement text */
 blockquote blockquote blockquote {
 	position: absolute;
-	left: 180px;
+	left: 185px;
 	display: table;
 	background: none;
 	right: 304px;
@@ -446,7 +446,7 @@ blockquote blockquote blockquote {
 .side blockquote blockquote blockquote h6 {
 	color: #333 !important;
 	text-transform: none;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	background: none;
 	vertical-align: middle;
 	display: table-cell;
@@ -840,7 +840,6 @@ body .content .md blockquote {
     display: block;
     line-height: 15px;
     font-family: "Courier New",courier,monospace;
-    word-wrap: initial;
 }
 
 .md pre:after {
