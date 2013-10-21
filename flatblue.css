@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.1 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.1.1 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -250,7 +250,7 @@ header area
 
 /* Background image and color for the header */
 #header {
-	background: url(%%header-blue%%) no-repeat bottom left;
+	background: url(%%header-blue2%%) no-repeat bottom left;
 	background-color: #479DD3;
 	border: 0;
 }
@@ -262,6 +262,7 @@ NOTE: when changing this you also have to change the positioning of other elemen
 #header-img {
 	margin: 0px;
 	margin-top: 56px;
+	margin-left: 11px;
 }
 
 body:not(.search-page) #search input[type="text"] {
@@ -279,7 +280,6 @@ body:not(.search-page) #search input[type="text"] {
 #header-bottom-left .tabmenu, .tabmenu.formtab, a[name=content] {
 	top: 165px;
 }
-
 
 #header-bottom-left ul {
 	position: absolute;
@@ -430,7 +430,7 @@ body:not(.search-page) #search input[type="text"] {
 /* Anouncement text */
 blockquote blockquote blockquote {
 	position: absolute;
-	left: 185px;
+	left: 183px;
 	display: table;
 	background: none;
 	right: 304px;
@@ -496,6 +496,7 @@ blockquote blockquote blockquote {
 	height: 20px;
 	line-height: 20px;
 	padding: 0;
+	padding-left: 10px;
 	background-color: #E9E9E9;
 	margin: 0;
 }
@@ -605,7 +606,7 @@ body .linklisting {
 	background-color: #FAFAFA;
 	min-height: 50px !important;
 	margin: 0px;
-        border-bottom: solid 1px #E9E9E9;
+	border-bottom: solid 1px #E9E9E9;
 }
 
 .linklisting .even {
@@ -614,7 +615,7 @@ body .linklisting {
 	background-color: #F5F5F5;
 	min-height: 50px !important;
 	margin: 0px;
-        border-bottom: solid 1px #E9E9E9;
+	border-bottom: solid 1px #E9E9E9;
 }
 
 .thing .title:visited {
@@ -738,13 +739,25 @@ background-position: 0px -72px;
 background-position: 0px -48px;
 }
 
-/* highlight removed and spammed items */
+/* highlight removed and spammed items for mods */
 body .content .sitetable .thing.spam, body .sitetable .thing.spam.deleted.link.self{
 border: solid 2px #FA8072 !important;
 }
 
 body .content .sitetable .thing.spam, body .sitetable .thing.spam.deleted.link.self{
 border: solid 2px #FA8072 !important;
+}
+
+/* Next section makes deleted messages less noticeable for users*/
+.deleted .grayed,
+.deleted > .entry .expand,
+.deleted > .entry .tagline {
+display: none;
+}
+.deleted > .entry .noncollapsed:after {
+content: 'removed/deleted';
+opacity: .25;
+color: #858585;
 }
 
 .gold-accent {
@@ -777,9 +790,18 @@ border: solid 2px #FA8072 !important;
 
 
 /* comments area */
+
+.commentarea .flat-list.buttons {
+display: block;
+}
 .link .usertext .md {
     border: 0;
 }
+
+.content .usertext-body, body .content .usertext-body .md { 
+margin-left: 0px;
+}
+
 
 .gold-accent.comment-visits-box {
     border-color: #C1BFBF;
@@ -789,16 +811,16 @@ border: solid 2px #FA8072 !important;
 }
 
 .panestack-title {
-    margin: 10px 310px 0px 34px;
+    margin: 10px 310px 0px 37px;
 }
 
 .commentarea .menuarea {
     border: none;
-    margin: 0 310px 10px 34px;
+    margin: 0 310px 10px 37px;
 }
 
 .commentarea>.usertext {
-    margin: 0 0 10px 33px;
+    margin: 0 0 10px 36px;
 }
 
 /* comment quotes */
@@ -896,10 +918,9 @@ body .comment .comment .comment .comment .comment .comment .comment .comment .co
 .res-commentBoxes .content .comment .comment .comment,
 .res-commentBoxes .content .comment .comment .comment .comment .comment,
 .res-commentBoxes .content .comment .comment .comment .comment .comment .comment .comment,
-.res-commentBoxes .content .comment .comment .comment .comment .comment .comment .comment .comment .comment
- {
-    background-color: #F5F5F5 !important;
-    border-radius: 0 !important;
+.res-commentBoxes .content .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+	background-color: #F5F5F5 !important;
+	border-radius: 0 !important;
 }
 
 .comment .comment,
@@ -912,142 +933,140 @@ body .comment .comment .comment .comment .comment .comment .comment .comment .co
 .res-commentBoxes .content .comment .comment .comment .comment .comment .comment,
 .res-commentBoxes .content .comment .comment .comment .comment .comment .comment .comment .comment,
 .res-commentBoxes .content .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
-    background-color: #fff !important;
-    border-radius: 0 !important;
+	background-color: #fff !important;
+	border-radius: 0 !important;
 }
 
 /* submission page */
 .submit.content {
-    border: 0;
-    margin: 0;
+	border: 0;
+	margin: 0;
 }
 
 .formtabs-content .roundfield {
-background: #F5F5F5;
-padding: 9px;
+	background: #F5F5F5;
+	padding: 9px;
 }
 
 .submit-page .infobar {
-background-color: #E7E6E3;
-border: 0;
-width: 500px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: #333;
-padding: 9px;
-
+	background-color: #E7E6E3;
+	border: 0;
+	width: 500px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #333;
+	padding: 9px;
 }
 
 .submit_text .content {
-    border: 0;
-    margin: 0;
-    display: block;
+	border: 0;
+	margin: 0;
+	display: block;
 }
 
 .submit_text {
-    max-height: 300px;
+	max-height: 300px;
 }
 
 #suggested-reddits a {
-color: #B4B3B2;
+	color: #B4B3B2;
 }
 
 #suggested-reddits {
-margin-top: 5px;
-
-text-transform: uppercase;
-letter-spacing: 1px;
+	margin-top: 5px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .content.submit .info-notice {
-background-color: #4BA6E0;
-border: 0;
-padding: 9px;
-color: #FFF;
-margin-bottom: 12px;
-text-transform: uppercase;
-letter-spacing: 2px;
+	background-color: #4BA6E0;
+	border: 0;
+	padding: 9px;
+	color: #FFF;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 .content.submit .info-notice a:hover {
-color: #97CE68;
+	color: #97CE68;
 }
+
 .content.submit .info-notice a {
-color: #FFF;
+	color: #FFF;
 }
 
 /* wiki formatting */
 .wiki-page .wikititle strong {
-font-weight: normal !important;
+	font-weight: normal !important;
 }
 
 .wiki-page .wikititle {
-margin-left: 15px;
-display: block;
-vertical-align: middle;
-color: #000!important;
-border-bottom: 1px solid #BDBAB4;
-letter-spacing: 2px;
-text-transform: uppercase;
-font-weight: normal !important;
-
-padding-left: 2px;
-padding-top: 10px;
+	margin-left: 15px;
+	display: block;
+	vertical-align: middle;
+	color: #000!important;
+	border-bottom: 1px solid #BDBAB4;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: normal !important;
+	padding-left: 2px;
+	padding-top: 10px;
 }
 
 .wiki-page .pageactions {
-margin-left: 14px;
+	margin-left: 14px;
 }
 
 .wiki-page .pageactions .wikiaction-current {
-color: #FFF;
-background-color: #97CE68;
+	color: #FFF;
+	background-color: #97CE68;
 }
 
 .wiki-page .pageactions .wikiaction {
-display: inline-block;
-margin: 2px;
-padding-top: 2px;
-padding-bottom: 3px;
-padding-right: 10px;
-padding-left: 10px;
-letter-spacing: 2px;
+	display: inline-block;
+	margin: 2px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	letter-spacing: 2px;
 }
 
 .pageactions a {
-background-color: #4BA6E0;
-color: #FFF;
+	background-color: #4BA6E0;
+	color: #FFF;
 }
 
 .wiki-page .content .wiki-page-content {
-margin-top: 0px;
+	margin-top: 0px;
 }
 
 .wiki-page .content .pageactions a:hover {
-background-color: #97CE68;
-color: #FFF;
+	background-color: #97CE68;
+	color: #FFF;
 }
 
 div.wiki div.toc>ul:before {
-    display: block!important;
-    content: "Table of Contents";
-    color: #99A;
-    text-align: center;
-    margin-top: -5px;
-    margin-bottom: 5px;
+	display: block!important;
+	content: "Table of Contents";
+	color: #99A;
+	text-align: center;
+	margin-top: -5px;
+	margin-bottom: 5px;
 }
 
 div.wiki div.toc {
-    float: right;
-    max-width: 40%;
-    border-color: #C1BFBF;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: #FFF;
+	float: right;
+	max-width: 40%;
+	border-color: #C1BFBF;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: #FFF;
 }
 
 .wiki-page .pageactions {
-    border: 0;
+	border: 0;
 }
 
 /*
@@ -1057,185 +1076,182 @@ sidebar area
 */
 
 body div.side {
-    margin: 68px 0 0 0;
-    border-left: solid 20px #E9E9E9;
-    border-bottom: solid 20px #E9E9E9;
+	margin: 68px 0 0 0;
+	border-left: solid 20px #E9E9E9;
+	border-bottom: solid 20px #E9E9E9;
 }
 
 /* message the moderators */ 
 .side .sidecontentbox a.helplink {
-    float: none;
-    margin-top: 4px;
-    background-color: #4BA6E0 !important;
-    color: #FFF;
-    display: block;    
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    background: none;
-    border: 0;
-    font-weight: normal;
-    line-height: 34px;
-    height: 34px;
-    text-align: left;
-    padding-left: 38px;
-    background: url(%%sprite-icon-32%%) no-repeat top left;
-    background-position: 2px -7127px;
+	float: none;
+	margin-top: 4px;
+	background-color: #4BA6E0 !important;
+	color: #FFF;
+	display: block;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	background: none;
+	border: 0;
+	font-weight: normal;
+	line-height: 34px;
+	height: 34px;
+	text-align: left;
+	padding-left: 38px;
+	background: url(%%sprite-icon-32%%) no-repeat top left;
+	background-position: 2px -7127px;
 }
 
 .side .sidecontentbox a.helplink:hover {
-    background-color: #97CE68 !important;
+	background-color: #97CE68 !important;
 }
 
 .side .spacer {
-margin: 0;
+	margin: 0;
 }
 
 .morelink {
-    display: block;    
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    background: none;
-    border: 0;
-    font-weight: normal;
-    line-height: 34px;
-    height: 34px;
-    text-align: left;
-    padding-left: 38px;
-    margin-bottom: 3px;
+	display: block;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	background: none;
+	border: 0;
+	font-weight: normal;
+	line-height: 34px;
+	height: 34px;
+	text-align: left;
+	padding-left: 38px;
+	margin-bottom: 3px;
 }
 
 .morelink a, .morelink a:hover {
-    color: #FFF;
+	color: #FFF;
 }
 
 body .morelink:hover {
-    background-color: #97CE68;
+	background-color: #97CE68;
 }
 
 .morelink .nub {
-    display: none;
+	display: none;
 }
 
 .submit-link .morelink {
-    background: url(%%sprite-icon-32%%) no-repeat top left;
-    background-position: 2px -12935px;
-    width: 262px;
-    background-color: #4BA6E0;
+	background: url(%%sprite-icon-32%%) no-repeat top left;
+	background-position: 4px -12935px;
+	width: 262px;
+	background-color: #4BA6E0;
 }
 
 .submit-text .morelink {
-    background: url(%%sprite-icon-32%%) no-repeat top left;
-    background-position: 2px -2177px;
-    width: 262px;
-    background-color: #4BA6E0;
+	background: url(%%sprite-icon-32%%) no-repeat top left;
+	background-position: 4px -2177px;
+	width: 262px;
+	background-color: #4BA6E0;
 }
 
 .create .morelink {
-    background: url(%%sprite-icon-32%%) no-repeat top left;
-    background-position: 2px -16367px;
-    background-color: #4BA6E0;
+	background: url(%%sprite-icon-32%%) no-repeat top left;
+	background-position: 2px -16367px;
+	background-color: #4BA6E0;
 }
 
 h1.redditname {
- display: none;
+	display: none;
 }
 
 h1.redditname:hover {
-    background-color: #97CE68;
+	background-color: #97CE68;
 }
 
 .hover a:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .titlebox h1 a {
-    color: #FFF;
+	color: #FFF;
 }
 
 .titlebox {
-padding-left: 5px;
+	padding-left: 5px;
 }
 
 .subButtons .RESshortcutside {
-    width: auto;
-    display: inline-block;
+	width: auto;
+	display: inline-block;
 }
 
 .subButtons .RESDashboardToggle {
-     width: auto;
-    display: inline-block;
+	width: auto;
+	display: inline-block;
 }
 
 .subButtons .RESshortcutside, .subButtons .RESDashboardToggle {
-    
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    border: 0;
-    font-weight: normal;
-    color: #000000;
-    background: none !important;
-    padding: 1px 0px 1px 0px;
-    z-index: 100;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	border: 0;
+	font-weight: normal;
+	color: #000000;
+	background: none !important;
+	padding: 1px 0px 1px 0px;
+	z-index: 100;
 }
 
 .subButtons .RESshortcutside.remove, .subButtons .RESDashboardToggle.remove {
-    background-image: none !important;
-    background-image: none;
-    background-color: #FF6766;
-    border-radius: 0px !important;
+	background-image: none !important;
+	background-image: none;
+	background-color: #FF6766;
+	border-radius: 0px !important;
 }
 
 .titlebox .fancy-toggle-button {
-    display: inline-block;
-    margin-bottom: 0;
+	display: inline-block;
+	margin-bottom: 0;
 }
 
 .titlebox .fancy-toggle-button a {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    background: none;
-    border: 0;
-    font-weight: normal;
-    text-align: left;
-    color: #FFF;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: none;
+	border: 0;
+	font-weight: normal;
+	text-align: left;
+	color: #FFF;
 }
 
 .titlebox .fancy-toggle-button .remove {
-    border: none;
-    background-image: none;
-    background-color: #FF6766;
+	border: none;
+	background-image: none;
+	background-color: #FF6766;
 }
 
 .titlebox .fancy-toggle-button .add {
-    border: none;
-    background-image: none;
-    background-color: #97CE68;
+	border: none;
+	background-image: none;
+	background-color: #97CE68;
 }
 
 .side .content {
-    border: 0;
+	border: 0;
 }
 
 .side .word, .side .number {
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    
-    font-weight: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: normal;
 }
 
 .side .users-online:before, .side .leavemoderator:before {
-    background: none;
-    padding: 0;
-    margin: 0;
-    width: 0;
+	background: none;
+	padding: 0;
+	margin: 0;
+	width: 0;
 }
 
 .sidecontentbox .title .collapse-button {
-    display: none;
+	display: none;
 }
 
 /* colored boxes in the sidebar idea comes from rolmos's edurne theme*/
@@ -1434,1537 +1450,1537 @@ a[href*='#icon-'] {
 
 
 /* remove RES annotation since these aren't really links */ 
-a[href*='#icon-'] + .keyNavAnnotation { 
-display:none;
+a[href*='#icon-'] + .keyNavAnnotation {
+	display: none;
 }
 
 a[href*='#icon-']:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 a[href*='#icon-']::before {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    content: '';
-    margin: 0 5px -1px 0;
-    background: url(%%sprite-icon-16%%) no-repeat top left;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	content: '';
+	margin: 0 5px -1px 0;
+	background: url(%%sprite-icon-16%%) no-repeat top left;
 }
 
 a[href='#icon-adjust']::before {
-    background-position: 0 0;
+	background-position: 0 0;
 }
 
 a[href='#icon-adn']::before {
-    background-position: 0 -34px;
+	background-position: 0 -34px;
 }
 
 a[href='#icon-align-center']::before {
-    background-position: 0 -68px;
+	background-position: 0 -68px;
 }
 
 a[href='#icon-align-justify']::before {
-    background-position: 0 -102px;
+	background-position: 0 -102px;
 }
 
 a[href='#icon-align-left']::before {
-    background-position: 0 -136px;
+	background-position: 0 -136px;
 }
 
 a[href='#icon-align-right']::before {
-    background-position: 0 -170px;
+	background-position: 0 -170px;
 }
 
 a[href='#icon-ambulance']::before {
-    background-position: 0 -204px;
+	background-position: 0 -204px;
 }
 
 a[href='#icon-anchor']::before {
-    background-position: 0 -238px;
+	background-position: 0 -238px;
 }
 
 a[href='#icon-android']::before {
-    background-position: 0 -272px;
+	background-position: 0 -272px;
 }
 
 a[href='#icon-angle-down']::before {
-    background-position: 0 -306px;
+	background-position: 0 -306px;
 }
 
 a[href='#icon-angle-left']::before {
-    background-position: 0 -340px;
+	background-position: 0 -340px;
 }
 
 a[href='#icon-angle-right']::before {
-    background-position: 0 -374px;
+	background-position: 0 -374px;
 }
 
 a[href='#icon-angle-up']::before {
-    background-position: 0 -408px;
+	background-position: 0 -408px;
 }
 
 a[href='#icon-apple']::before {
-    background-position: 0 -442px;
+	background-position: 0 -442px;
 }
 
 a[href='#icon-archive']::before {
-    background-position: 0 -476px;
+	background-position: 0 -476px;
 }
 
 a[href='#icon-arrow-down']::before {
-    background-position: 0 -510px;
+	background-position: 0 -510px;
 }
 
 a[href='#icon-arrow-left']::before {
-    background-position: 0 -544px;
+	background-position: 0 -544px;
 }
 
 a[href='#icon-arrow-right']::before {
-    background-position: 0 -578px;
+	background-position: 0 -578px;
 }
 
 a[href='#icon-arrow-up']::before {
-    background-position: 0 -612px;
+	background-position: 0 -612px;
 }
 
 a[href='#icon-asterisk']::before {
-    background-position: 0 -646px;
+	background-position: 0 -646px;
 }
 
 a[href='#icon-backward']::before {
-    background-position: 0 -680px;
+	background-position: 0 -680px;
 }
 
 a[href='#icon-ban-circle']::before {
-    background-position: 0 -714px;
+	background-position: 0 -714px;
 }
 
 a[href='#icon-bar-chart']::before {
-    background-position: 0 -748px;
+	background-position: 0 -748px;
 }
 
 a[href='#icon-barcode']::before {
-    background-position: 0 -782px;
+	background-position: 0 -782px;
 }
 
 a[href='#icon-beaker']::before {
-    background-position: 0 -816px;
+	background-position: 0 -816px;
 }
 
 a[href='#icon-beer']::before {
-    background-position: 0 -850px;
+	background-position: 0 -850px;
 }
 
 a[href='#icon-bell-alt']::before {
-    background-position: 0 -884px;
+	background-position: 0 -884px;
 }
 
 a[href='#icon-bell']::before {
-    background-position: 0 -918px;
+	background-position: 0 -918px;
 }
 
 a[href='#icon-bitbucket-sign']::before {
-    background-position: 0 -952px;
+	background-position: 0 -952px;
 }
 
 a[href='#icon-bitbucket']::before {
-    background-position: 0 -986px;
+	background-position: 0 -986px;
 }
 
 a[href='#icon-bitcoin']::before {
-    background-position: 0 -1020px;
+	background-position: 0 -1020px;
 }
 
 a[href='#icon-bold']::before {
-    background-position: 0 -1054px;
+	background-position: 0 -1054px;
 }
 
 a[href='#icon-bolt']::before {
-    background-position: 0 -1088px;
+	background-position: 0 -1088px;
 }
 
 a[href='#icon-book']::before {
-    background-position: 0 -1122px;
+	background-position: 0 -1122px;
 }
 
 a[href='#icon-bookmark-empty']::before {
-    background-position: 0 -1156px;
+	background-position: 0 -1156px;
 }
 
 a[href='#icon-bookmark']::before {
-    background-position: 0 -1190px;
+	background-position: 0 -1190px;
 }
 
 a[href='#icon-briefcase']::before {
-    background-position: 0 -1224px;
+	background-position: 0 -1224px;
 }
 
 a[href='#icon-btc']::before {
-    background-position: 0 -1258px;
+	background-position: 0 -1258px;
 }
 
 a[href='#icon-bug']::before {
-    background-position: 0 -1292px;
+	background-position: 0 -1292px;
 }
 
 a[href='#icon-building']::before {
-    background-position: 0 -1326px;
+	background-position: 0 -1326px;
 }
 
 a[href='#icon-bullhorn']::before {
-    background-position: 0 -1360px;
+	background-position: 0 -1360px;
 }
 
 a[href='#icon-bullseye']::before {
-    background-position: 0 -1394px;
+	background-position: 0 -1394px;
 }
 
 a[href='#icon-calendar-empty']::before {
-    background-position: 0 -1428px;
+	background-position: 0 -1428px;
 }
 
 a[href='#icon-calendar']::before {
-    background-position: 0 -1462px;
+	background-position: 0 -1462px;
 }
 
 a[href='#icon-camera-retro']::before {
-    background-position: 0 -1496px;
+	background-position: 0 -1496px;
 }
 
 a[href='#icon-camera']::before {
-    background-position: 0 -1530px;
+	background-position: 0 -1530px;
 }
 
 a[href='#icon-caret-down']::before {
-    background-position: 0 -1564px;
+	background-position: 0 -1564px;
 }
 
 a[href='#icon-caret-left']::before {
-    background-position: 0 -1598px;
+	background-position: 0 -1598px;
 }
 
 a[href='#icon-caret-right']::before {
-    background-position: 0 -1632px;
+	background-position: 0 -1632px;
 }
 
 a[href='#icon-caret-up']::before {
-    background-position: 0 -1666px;
+	background-position: 0 -1666px;
 }
 
 a[href='#icon-certificate']::before {
-    background-position: 0 -1700px;
+	background-position: 0 -1700px;
 }
 
 a[href='#icon-check-empty']::before {
-    background-position: 0 -1734px;
+	background-position: 0 -1734px;
 }
 
 a[href='#icon-check-minus']::before {
-    background-position: 0 -1768px;
+	background-position: 0 -1768px;
 }
 
 a[href='#icon-check-sign']::before {
-    background-position: 0 -1802px;
+	background-position: 0 -1802px;
 }
 
 a[href='#icon-check']::before {
-    background-position: 0 -1836px;
+	background-position: 0 -1836px;
 }
 
 a[href='#icon-chevron-down']::before {
-    background-position: 0 -1870px;
+	background-position: 0 -1870px;
 }
 
 a[href='#icon-chevron-left']::before {
-    background-position: 0 -1904px;
+	background-position: 0 -1904px;
 }
 
 a[href='#icon-chevron-right']::before {
-    background-position: 0 -1938px;
+	background-position: 0 -1938px;
 }
 
 a[href='#icon-chevron-sign-down']::before {
-    background-position: 0 -1972px;
+	background-position: 0 -1972px;
 }
 
 a[href='#icon-chevron-sign-left']::before {
-    background-position: 0 -2006px;
+	background-position: 0 -2006px;
 }
 
 a[href='#icon-chevron-sign-right']::before {
-    background-position: 0 -2040px;
+	background-position: 0 -2040px;
 }
 
 a[href='#icon-chevron-sign-up']::before {
-    background-position: 0 -2074px;
+	background-position: 0 -2074px;
 }
 
 a[href='#icon-chevron-up']::before {
-    background-position: 0 -2108px;
+	background-position: 0 -2108px;
 }
 
 a[href='#icon-circle-arrow-down']::before {
-    background-position: 0 -2142px;
+	background-position: 0 -2142px;
 }
 
 a[href='#icon-circle-arrow-left']::before {
-    background-position: 0 -2176px;
+	background-position: 0 -2176px;
 }
 
 a[href='#icon-circle-arrow-right']::before {
-    background-position: 0 -2210px;
+	background-position: 0 -2210px;
 }
 
 a[href='#icon-circle-arrow-up']::before {
-    background-position: 0 -2244px;
+	background-position: 0 -2244px;
 }
 
 a[href='#icon-circle-blank']::before {
-    background-position: 0 -2278px;
+	background-position: 0 -2278px;
 }
 
 a[href='#icon-circle']::before {
-    background-position: 0 -2312px;
+	background-position: 0 -2312px;
 }
 
 a[href='#icon-cloud-download']::before {
-    background-position: 0 -2346px;
+	background-position: 0 -2346px;
 }
 
 a[href='#icon-cloud-upload']::before {
-    background-position: 0 -2380px;
+	background-position: 0 -2380px;
 }
 
 a[href='#icon-cloud']::before {
-    background-position: 0 -2414px;
+	background-position: 0 -2414px;
 }
 
 a[href='#icon-cny']::before {
-    background-position: 0 -2448px;
+	background-position: 0 -2448px;
 }
 
 a[href='#icon-code-fork']::before {
-    background-position: 0 -2482px;
+	background-position: 0 -2482px;
 }
 
 a[href='#icon-code']::before {
-    background-position: 0 -2516px;
+	background-position: 0 -2516px;
 }
 
 a[href='#icon-coffee']::before {
-    background-position: 0 -2550px;
+	background-position: 0 -2550px;
 }
 
 a[href='#icon-cog']::before {
-    background-position: 0 -2584px;
+	background-position: 0 -2584px;
 }
 
 a[href='#icon-cogs']::before {
-    background-position: 0 -2618px;
+	background-position: 0 -2618px;
 }
 
 a[href='#icon-collapse-alt']::before {
-    background-position: 0 -2652px;
+	background-position: 0 -2652px;
 }
 
 a[href='#icon-collapse-top']::before {
-    background-position: 0 -2686px;
+	background-position: 0 -2686px;
 }
 
 a[href='#icon-collapse']::before {
-    background-position: 0 -2720px;
+	background-position: 0 -2720px;
 }
 
 a[href='#icon-columns']::before {
-    background-position: 0 -2754px;
+	background-position: 0 -2754px;
 }
 
 a[href='#icon-comment-alt']::before {
-    background-position: 0 -2788px;
+	background-position: 0 -2788px;
 }
 
 a[href='#icon-comment']::before {
-    background-position: 0 -2822px;
+	background-position: 0 -2822px;
 }
 
 a[href='#icon-comments-alt']::before {
-    background-position: 0 -2856px;
+	background-position: 0 -2856px;
 }
 
 a[href='#icon-comments']::before {
-    background-position: 0 -2890px;
+	background-position: 0 -2890px;
 }
 
 a[href='#icon-compass']::before {
-    background-position: 0 -2924px;
+	background-position: 0 -2924px;
 }
 
 a[href='#icon-copy']::before {
-    background-position: 0 -2958px;
+	background-position: 0 -2958px;
 }
 
 a[href='#icon-credit-card']::before {
-    background-position: 0 -2992px;
+	background-position: 0 -2992px;
 }
 
 a[href='#icon-crop']::before {
-    background-position: 0 -3026px;
+	background-position: 0 -3026px;
 }
 
 a[href='#icon-css3']::before {
-    background-position: 0 -3060px;
+	background-position: 0 -3060px;
 }
 
 a[href='#icon-cut']::before {
-    background-position: 0 -3094px;
+	background-position: 0 -3094px;
 }
 
 a[href='#icon-dashboard']::before {
-    background-position: 0 -3128px;
+	background-position: 0 -3128px;
 }
 
 a[href='#icon-desktop']::before {
-    background-position: 0 -3162px;
+	background-position: 0 -3162px;
 }
 
 a[href='#icon-dollar']::before {
-    background-position: 0 -3196px;
+	background-position: 0 -3196px;
 }
 
 a[href='#icon-double-angle-down']::before {
-    background-position: 0 -3230px;
+	background-position: 0 -3230px;
 }
 
 a[href='#icon-double-angle-left']::before {
-    background-position: 0 -3264px;
+	background-position: 0 -3264px;
 }
 
 a[href='#icon-double-angle-right']::before {
-    background-position: 0 -3298px;
+	background-position: 0 -3298px;
 }
 
 a[href='#icon-double-angle-up']::before {
-    background-position: 0 -3332px;
+	background-position: 0 -3332px;
 }
 
 a[href='#icon-download-alt']::before {
-    background-position: 0 -3366px;
+	background-position: 0 -3366px;
 }
 
 a[href='#icon-download']::before {
-    background-position: 0 -3400px;
+	background-position: 0 -3400px;
 }
 
 a[href='#icon-dribbble']::before {
-    background-position: 0 -3434px;
+	background-position: 0 -3434px;
 }
 
 a[href='#icon-dropbox']::before {
-    background-position: 0 -3468px;
+	background-position: 0 -3468px;
 }
 
 a[href='#icon-edit-sign']::before {
-    background-position: 0 -3502px;
+	background-position: 0 -3502px;
 }
 
 a[href='#icon-edit']::before {
-    background-position: 0 -3536px;
+	background-position: 0 -3536px;
 }
 
 a[href='#icon-eject']::before {
-    background-position: 0 -3570px;
+	background-position: 0 -3570px;
 }
 
 a[href='#icon-ellipsis-horizontal']::before {
-    background-position: 0 -3604px;
+	background-position: 0 -3604px;
 }
 
 a[href='#icon-ellipsis-vertical']::before {
-    background-position: 0 -3638px;
+	background-position: 0 -3638px;
 }
 
 a[href='#icon-envelope-alt']::before {
-    background-position: 0 -3672px;
+	background-position: 0 -3672px;
 }
 
 a[href='#icon-envelope']::before {
-    background-position: 0 -3706px;
+	background-position: 0 -3706px;
 }
 
 a[href='#icon-eraser']::before {
-    background-position: 0 -3740px;
+	background-position: 0 -3740px;
 }
 
 a[href='#icon-eur']::before {
-    background-position: 0 -3774px;
+	background-position: 0 -3774px;
 }
 
 a[href='#icon-euro']::before {
-    background-position: 0 -3808px;
+	background-position: 0 -3808px;
 }
 
 a[href='#icon-exchange']::before {
-    background-position: 0 -3842px;
+	background-position: 0 -3842px;
 }
 
 a[href='#icon-exclamation-sign']::before {
-    background-position: 0 -3876px;
+	background-position: 0 -3876px;
 }
 
 a[href='#icon-exclamation']::before {
-    background-position: 0 -3910px;
+	background-position: 0 -3910px;
 }
 
 a[href='#icon-expand-alt']::before {
-    background-position: 0 -3944px;
+	background-position: 0 -3944px;
 }
 
 a[href='#icon-expand']::before {
-    background-position: 0 -3978px;
+	background-position: 0 -3978px;
 }
 
 a[href='#icon-external-link-sign']::before {
-    background-position: 0 -4012px;
+	background-position: 0 -4012px;
 }
 
 a[href='#icon-external-link']::before {
-    background-position: 0 -4046px;
+	background-position: 0 -4046px;
 }
 
 a[href='#icon-eye-close']::before {
-    background-position: 0 -4080px;
+	background-position: 0 -4080px;
 }
 
 a[href='#icon-eye-open']::before {
-    background-position: 0 -4114px;
+	background-position: 0 -4114px;
 }
 
 a[href='#icon-facebook-sign']::before {
-    background-position: 0 -4148px;
+	background-position: 0 -4148px;
 }
 
 a[href='#icon-facebook']::before {
-    background-position: 0 -4182px;
+	background-position: 0 -4182px;
 }
 
 a[href='#icon-facetime-video']::before {
-    background-position: 0 -4216px;
+	background-position: 0 -4216px;
 }
 
 a[href='#icon-fast-backward']::before {
-    background-position: 0 -4250px;
+	background-position: 0 -4250px;
 }
 
 a[href='#icon-fast-forward']::before {
-    background-position: 0 -4284px;
+	background-position: 0 -4284px;
 }
 
 a[href='#icon-female']::before {
-    background-position: 0 -4318px;
+	background-position: 0 -4318px;
 }
 
 a[href='#icon-fighter-jet']::before {
-    background-position: 0 -4352px;
+	background-position: 0 -4352px;
 }
 
 a[href='#icon-file-alt']::before {
-    background-position: 0 -4386px;
+	background-position: 0 -4386px;
 }
 
 a[href='#icon-file-text-alt']::before {
-    background-position: 0 -4420px;
+	background-position: 0 -4420px;
 }
 
 a[href='#icon-file-text']::before {
-    background-position: 0 -4454px;
+	background-position: 0 -4454px;
 }
 
 a[href='#icon-file']::before {
-    background-position: 0 -4488px;
+	background-position: 0 -4488px;
 }
 
 a[href='#icon-film']::before {
-    background-position: 0 -4522px;
+	background-position: 0 -4522px;
 }
 
 a[href='#icon-filter']::before {
-    background-position: 0 -4556px;
+	background-position: 0 -4556px;
 }
 
 a[href='#icon-fire-extinguisher']::before {
-    background-position: 0 -4590px;
+	background-position: 0 -4590px;
 }
 
 a[href='#icon-fire']::before {
-    background-position: 0 -4624px;
+	background-position: 0 -4624px;
 }
 
 a[href='#icon-flag-alt']::before {
-    background-position: 0 -4658px;
+	background-position: 0 -4658px;
 }
 
 a[href='#icon-flag-checkered']::before {
-    background-position: 0 -4692px;
+	background-position: 0 -4692px;
 }
 
 a[href='#icon-flag']::before {
-    background-position: 0 -4726px;
+	background-position: 0 -4726px;
 }
 
 a[href='#icon-flickr']::before {
-    background-position: 0 -4760px;
+	background-position: 0 -4760px;
 }
 
 a[href='#icon-folder-close-alt']::before {
-    background-position: 0 -4794px;
+	background-position: 0 -4794px;
 }
 
 a[href='#icon-folder-close']::before {
-    background-position: 0 -4828px;
+	background-position: 0 -4828px;
 }
 
 a[href='#icon-folder-open-alt']::before {
-    background-position: 0 -4862px;
+	background-position: 0 -4862px;
 }
 
 a[href='#icon-folder-open']::before {
-    background-position: 0 -4896px;
+	background-position: 0 -4896px;
 }
 
 a[href='#icon-font']::before {
-    background-position: 0 -4930px;
+	background-position: 0 -4930px;
 }
 
 a[href='#icon-food']::before {
-    background-position: 0 -4964px;
+	background-position: 0 -4964px;
 }
 
 a[href='#icon-forward']::before {
-    background-position: 0 -4998px;
+	background-position: 0 -4998px;
 }
 
 a[href='#icon-foursquare']::before {
-    background-position: 0 -5032px;
+	background-position: 0 -5032px;
 }
 
 a[href='#icon-frown']::before {
-    background-position: 0 -5066px;
+	background-position: 0 -5066px;
 }
 
 a[href='#icon-fullscreen']::before {
-    background-position: 0 -5100px;
+	background-position: 0 -5100px;
 }
 
 a[href='#icon-gamepad']::before {
-    background-position: 0 -5134px;
+	background-position: 0 -5134px;
 }
 
 a[href='#icon-gbp']::before {
-    background-position: 0 -5168px;
+	background-position: 0 -5168px;
 }
 
 a[href='#icon-gear']::before {
-    background-position: 0 -5202px;
+	background-position: 0 -5202px;
 }
 
 a[href='#icon-gears']::before {
-    background-position: 0 -5236px;
+	background-position: 0 -5236px;
 }
 
 a[href='#icon-gift']::before {
-    background-position: 0 -5270px;
+	background-position: 0 -5270px;
 }
 
 a[href='#icon-github-alt']::before {
-    background-position: 0 -5304px;
+	background-position: 0 -5304px;
 }
 
 a[href='#icon-github-sign']::before {
-    background-position: 0 -5338px;
+	background-position: 0 -5338px;
 }
 
 a[href='#icon-github']::before {
-    background-position: 0 -5372px;
+	background-position: 0 -5372px;
 }
 
 a[href='#icon-gittip']::before {
-    background-position: 0 -5406px;
+	background-position: 0 -5406px;
 }
 
 a[href='#icon-glass']::before {
-    background-position: 0 -5440px;
+	background-position: 0 -5440px;
 }
 
 a[href='#icon-globe']::before {
-    background-position: 0 -5474px;
+	background-position: 0 -5474px;
 }
 
 a[href='#icon-google-plus-sign']::before {
-    background-position: 0 -5508px;
+	background-position: 0 -5508px;
 }
 
 a[href='#icon-google-plus']::before {
-    background-position: 0 -5542px;
+	background-position: 0 -5542px;
 }
 
 a[href='#icon-group']::before {
-    background-position: 0 -5576px;
+	background-position: 0 -5576px;
 }
 
 a[href='#icon-h-sign']::before {
-    background-position: 0 -5610px;
+	background-position: 0 -5610px;
 }
 
 a[href='#icon-hand-down']::before {
-    background-position: 0 -5644px;
+	background-position: 0 -5644px;
 }
 
 a[href='#icon-hand-left']::before {
-    background-position: 0 -5678px;
+	background-position: 0 -5678px;
 }
 
 a[href='#icon-hand-right']::before {
-    background-position: 0 -5712px;
+	background-position: 0 -5712px;
 }
 
 a[href='#icon-hand-up']::before {
-    background-position: 0 -5746px;
+	background-position: 0 -5746px;
 }
 
 a[href='#icon-hdd']::before {
-    background-position: 0 -5780px;
+	background-position: 0 -5780px;
 }
 
 a[href='#icon-headphones']::before {
-    background-position: 0 -5814px;
+	background-position: 0 -5814px;
 }
 
 a[href='#icon-heart-empty']::before {
-    background-position: 0 -5848px;
+	background-position: 0 -5848px;
 }
 
 a[href='#icon-heart']::before {
-    background-position: 0 -5882px;
+	background-position: 0 -5882px;
 }
 
 a[href='#icon-home']::before {
-    background-position: 0 -5916px;
+	background-position: 0 -5916px;
 }
 
 a[href='#icon-hospital']::before {
-    background-position: 0 -5950px;
+	background-position: 0 -5950px;
 }
 
 a[href='#icon-html5']::before {
-    background-position: 0 -5984px;
+	background-position: 0 -5984px;
 }
 
 a[href='#icon-inbox']::before {
-    background-position: 0 -6018px;
+	background-position: 0 -6018px;
 }
 
 a[href='#icon-indent-left']::before {
-    background-position: 0 -6052px;
+	background-position: 0 -6052px;
 }
 
 a[href='#icon-indent-right']::before {
-    background-position: 0 -6086px;
+	background-position: 0 -6086px;
 }
 
 a[href='#icon-info-sign']::before {
-    background-position: 0 -6120px;
+	background-position: 0 -6120px;
 }
 
 a[href='#icon-info']::before {
-    background-position: 0 -6154px;
+	background-position: 0 -6154px;
 }
 
 a[href='#icon-inr']::before {
-    background-position: 0 -6188px;
+	background-position: 0 -6188px;
 }
 
 a[href='#icon-instagram']::before {
-    background-position: 0 -6222px;
+	background-position: 0 -6222px;
 }
 
 a[href='#icon-italic']::before {
-    background-position: 0 -6256px;
+	background-position: 0 -6256px;
 }
 
 a[href='#icon-jpy']::before {
-    background-position: 0 -6290px;
+	background-position: 0 -6290px;
 }
 
 a[href='#icon-key']::before {
-    background-position: 0 -6324px;
+	background-position: 0 -6324px;
 }
 
 a[href='#icon-keyboard']::before {
-    background-position: 0 -6358px;
+	background-position: 0 -6358px;
 }
 
 a[href='#icon-krw']::before {
-    background-position: 0 -6392px;
+	background-position: 0 -6392px;
 }
 
 a[href='#icon-laptop']::before {
-    background-position: 0 -6426px;
+	background-position: 0 -6426px;
 }
 
 a[href='#icon-leaf']::before {
-    background-position: 0 -6460px;
+	background-position: 0 -6460px;
 }
 
 a[href='#icon-legal']::before {
-    background-position: 0 -6494px;
+	background-position: 0 -6494px;
 }
 
 a[href='#icon-lemon']::before {
-    background-position: 0 -6528px;
+	background-position: 0 -6528px;
 }
 
 a[href='#icon-level-down']::before {
-    background-position: 0 -6562px;
+	background-position: 0 -6562px;
 }
 
 a[href='#icon-level-up']::before {
-    background-position: 0 -6596px;
+	background-position: 0 -6596px;
 }
 
 a[href='#icon-lightbulb']::before {
-    background-position: 0 -6630px;
+	background-position: 0 -6630px;
 }
 
 a[href='#icon-link']::before {
-    background-position: 0 -6664px;
+	background-position: 0 -6664px;
 }
 
 a[href='#icon-linkedin-sign']::before {
-    background-position: 0 -6698px;
+	background-position: 0 -6698px;
 }
 
 a[href='#icon-linkedin']::before {
-    background-position: 0 -6732px;
+	background-position: 0 -6732px;
 }
 
 a[href='#icon-linux']::before {
-    background-position: 0 -6766px;
+	background-position: 0 -6766px;
 }
 
 a[href='#icon-list-alt']::before {
-    background-position: 0 -6800px;
+	background-position: 0 -6800px;
 }
 
 a[href='#icon-list-ol']::before {
-    background-position: 0 -6834px;
+	background-position: 0 -6834px;
 }
 
 a[href='#icon-list-ul']::before {
-    background-position: 0 -6868px;
+	background-position: 0 -6868px;
 }
 
 a[href='#icon-list']::before {
-    background-position: 0 -6902px;
+	background-position: 0 -6902px;
 }
 
 a[href='#icon-location-arrow']::before {
-    background-position: 0 -6936px;
+	background-position: 0 -6936px;
 }
 
 a[href='#icon-lock']::before {
-    background-position: 0 -6970px;
+	background-position: 0 -6970px;
 }
 
 a[href='#icon-long-arrow-down']::before {
-    background-position: 0 -7004px;
+	background-position: 0 -7004px;
 }
 
 a[href='#icon-long-arrow-left']::before {
-    background-position: 0 -7038px;
+	background-position: 0 -7038px;
 }
 
 a[href='#icon-long-arrow-right']::before {
-    background-position: 0 -7072px;
+	background-position: 0 -7072px;
 }
 
 a[href='#icon-long-arrow-up']::before {
-    background-position: 0 -7106px;
+	background-position: 0 -7106px;
 }
 
 a[href='#icon-magic']::before {
-    background-position: 0 -7140px;
+	background-position: 0 -7140px;
 }
 
 a[href='#icon-magnet']::before {
-    background-position: 0 -7174px;
+	background-position: 0 -7174px;
 }
 
 a[href='#icon-mail-forward']::before {
-    background-position: 0 -7208px;
+	background-position: 0 -7208px;
 }
 
 a[href='#icon-mail-reply-all']::before {
-    background-position: 0 -7242px;
+	background-position: 0 -7242px;
 }
 
 a[href='#icon-mail-reply']::before {
-    background-position: 0 -7276px;
+	background-position: 0 -7276px;
 }
 
 a[href='#icon-male']::before {
-    background-position: 0 -7310px;
+	background-position: 0 -7310px;
 }
 
 a[href='#icon-map-marker']::before {
-    background-position: 0 -7344px;
+	background-position: 0 -7344px;
 }
 
 a[href='#icon-maxcdn']::before {
-    background-position: 0 -7378px;
+	background-position: 0 -7378px;
 }
 
 a[href='#icon-medkit']::before {
-    background-position: 0 -7412px;
+	background-position: 0 -7412px;
 }
 
 a[href='#icon-meh']::before {
-    background-position: 0 -7446px;
+	background-position: 0 -7446px;
 }
 
 a[href='#icon-microphone-off']::before {
-    background-position: 0 -7480px;
+	background-position: 0 -7480px;
 }
 
 a[href='#icon-microphone']::before {
-    background-position: 0 -7514px;
+	background-position: 0 -7514px;
 }
 
 a[href='#icon-minus-sign-alt']::before {
-    background-position: 0 -7548px;
+	background-position: 0 -7548px;
 }
 
 a[href='#icon-minus-sign']::before {
-    background-position: 0 -7582px;
+	background-position: 0 -7582px;
 }
 
 a[href='#icon-minus']::before {
-    background-position: 0 -7616px;
+	background-position: 0 -7616px;
 }
 
 a[href='#icon-mobile-phone']::before {
-    background-position: 0 -7650px;
+	background-position: 0 -7650px;
 }
 
 a[href='#icon-money']::before {
-    background-position: 0 -7684px;
+	background-position: 0 -7684px;
 }
 
 a[href='#icon-moon']::before {
-    background-position: 0 -7718px;
+	background-position: 0 -7718px;
 }
 
 a[href='#icon-move']::before {
-    background-position: 0 -7752px;
+	background-position: 0 -7752px;
 }
 
 a[href='#icon-music']::before {
-    background-position: 0 -7786px;
+	background-position: 0 -7786px;
 }
 
 a[href='#icon-off']::before {
-    background-position: 0 -7820px;
+	background-position: 0 -7820px;
 }
 
 a[href='#icon-ok-circle']::before {
-    background-position: 0 -7854px;
+	background-position: 0 -7854px;
 }
 
 a[href='#icon-ok-sign']::before {
-    background-position: 0 -7888px;
+	background-position: 0 -7888px;
 }
 
 a[href='#icon-ok']::before {
-    background-position: 0 -7922px;
+	background-position: 0 -7922px;
 }
 
 a[href='#icon-paper-clip']::before {
-    background-position: 0 -7956px;
+	background-position: 0 -7956px;
 }
 
 a[href='#icon-paperclip']::before {
-    background-position: 0 -7990px;
+	background-position: 0 -7990px;
 }
 
 a[href='#icon-paste']::before {
-    background-position: 0 -8024px;
+	background-position: 0 -8024px;
 }
 
 a[href='#icon-pause']::before {
-    background-position: 0 -8058px;
+	background-position: 0 -8058px;
 }
 
 a[href='#icon-pencil']::before {
-    background-position: 0 -8092px;
+	background-position: 0 -8092px;
 }
 
 a[href='#icon-phone-sign']::before {
-    background-position: 0 -8126px;
+	background-position: 0 -8126px;
 }
 
 a[href='#icon-phone']::before {
-    background-position: 0 -8160px;
+	background-position: 0 -8160px;
 }
 
 a[href='#icon-picture']::before {
-    background-position: 0 -8194px;
+	background-position: 0 -8194px;
 }
 
 a[href='#icon-pinterest-sign']::before {
-    background-position: 0 -8228px;
+	background-position: 0 -8228px;
 }
 
 a[href='#icon-pinterest']::before {
-    background-position: 0 -8262px;
+	background-position: 0 -8262px;
 }
 
 a[href='#icon-plane']::before {
-    background-position: 0 -8296px;
+	background-position: 0 -8296px;
 }
 
 a[href='#icon-play-circle']::before {
-    background-position: 0 -8330px;
+	background-position: 0 -8330px;
 }
 
 a[href='#icon-play-sign']::before {
-    background-position: 0 -8364px;
+	background-position: 0 -8364px;
 }
 
 a[href='#icon-play']::before {
-    background-position: 0 -8398px;
+	background-position: 0 -8398px;
 }
 
 a[href='#icon-plus-sign-alt']::before {
-    background-position: 0 -8432px;
+	background-position: 0 -8432px;
 }
 
 a[href='#icon-plus-sign']::before {
-    background-position: 0 -8466px;
+	background-position: 0 -8466px;
 }
 
 a[href='#icon-plus']::before {
-    background-position: 0 -8500px;
+	background-position: 0 -8500px;
 }
 
 a[href='#icon-power-off']::before {
-    background-position: 0 -8534px;
+	background-position: 0 -8534px;
 }
 
 a[href='#icon-print']::before {
-    background-position: 0 -8568px;
+	background-position: 0 -8568px;
 }
 
 a[href='#icon-pushpin']::before {
-    background-position: 0 -8602px;
+	background-position: 0 -8602px;
 }
 
 a[href='#icon-puzzle-piece']::before {
-    background-position: 0 -8636px;
+	background-position: 0 -8636px;
 }
 
 a[href='#icon-qrcode']::before {
-    background-position: 0 -8670px;
+	background-position: 0 -8670px;
 }
 
 a[href='#icon-question-sign']::before {
-    background-position: 0 -8704px;
+	background-position: 0 -8704px;
 }
 
 a[href='#icon-question']::before {
-    background-position: 0 -8738px;
+	background-position: 0 -8738px;
 }
 
 a[href='#icon-quote-left']::before {
-    background-position: 0 -8772px;
+	background-position: 0 -8772px;
 }
 
 a[href='#icon-quote-right']::before {
-    background-position: 0 -8806px;
+	background-position: 0 -8806px;
 }
 
 a[href='#icon-random']::before {
-    background-position: 0 -8840px;
+	background-position: 0 -8840px;
 }
 
 a[href='#icon-refresh']::before {
-    background-position: 0 -8874px;
+	background-position: 0 -8874px;
 }
 
 a[href='#icon-remove-circle']::before {
-    background-position: 0 -8908px;
+	background-position: 0 -8908px;
 }
 
 a[href='#icon-remove-sign']::before {
-    background-position: 0 -8942px;
+	background-position: 0 -8942px;
 }
 
 a[href='#icon-remove']::before {
-    background-position: 0 -8976px;
+	background-position: 0 -8976px;
 }
 
 a[href='#icon-renminbi']::before {
-    background-position: 0 -9010px;
+	background-position: 0 -9010px;
 }
 
 a[href='#icon-renren']::before {
-    background-position: 0 -9044px;
+	background-position: 0 -9044px;
 }
 
 a[href='#icon-reorder']::before {
-    background-position: 0 -9078px;
+	background-position: 0 -9078px;
 }
 
 a[href='#icon-repeat']::before {
-    background-position: 0 -9112px;
+	background-position: 0 -9112px;
 }
 
 a[href='#icon-reply-all']::before {
-    background-position: 0 -9146px;
+	background-position: 0 -9146px;
 }
 
 a[href='#icon-reply']::before {
-    background-position: 0 -9180px;
+	background-position: 0 -9180px;
 }
 
 a[href='#icon-resize-full']::before {
-    background-position: 0 -9214px;
+	background-position: 0 -9214px;
 }
 
 a[href='#icon-resize-horizontal']::before {
-    background-position: 0 -9248px;
+	background-position: 0 -9248px;
 }
 
 a[href='#icon-resize-small']::before {
-    background-position: 0 -9282px;
+	background-position: 0 -9282px;
 }
 
 a[href='#icon-resize-vertical']::before {
-    background-position: 0 -9316px;
+	background-position: 0 -9316px;
 }
 
 a[href='#icon-retweet']::before {
-    background-position: 0 -9350px;
+	background-position: 0 -9350px;
 }
 
 a[href='#icon-road']::before {
-    background-position: 0 -9384px;
+	background-position: 0 -9384px;
 }
 
 a[href='#icon-rocket']::before {
-    background-position: 0 -9418px;
+	background-position: 0 -9418px;
 }
 
 a[href='#icon-rotate-left']::before {
-    background-position: 0 -9452px;
+	background-position: 0 -9452px;
 }
 
 a[href='#icon-rotate-right']::before {
-    background-position: 0 -9486px;
+	background-position: 0 -9486px;
 }
 
 a[href='#icon-rss-sign']::before {
-    background-position: 0 -9520px;
+	background-position: 0 -9520px;
 }
 
 a[href='#icon-rss']::before {
-    background-position: 0 -9554px;
+	background-position: 0 -9554px;
 }
 
 a[href='#icon-rupee']::before {
-    background-position: 0 -9588px;
+	background-position: 0 -9588px;
 }
 
 a[href='#icon-save']::before {
-    background-position: 0 -9622px;
+	background-position: 0 -9622px;
 }
 
 a[href='#icon-screenshot']::before {
-    background-position: 0 -9656px;
+	background-position: 0 -9656px;
 }
 
 a[href='#icon-search']::before {
-    background-position: 0 -9690px;
+	background-position: 0 -9690px;
 }
 
 a[href='#icon-share-alt']::before {
-    background-position: 0 -9724px;
+	background-position: 0 -9724px;
 }
 
 a[href='#icon-share-sign']::before {
-    background-position: 0 -9758px;
+	background-position: 0 -9758px;
 }
 
 a[href='#icon-share']::before {
-    background-position: 0 -9792px;
+	background-position: 0 -9792px;
 }
 
 a[href='#icon-shield']::before {
-    background-position: 0 -9826px;
+	background-position: 0 -9826px;
 }
 
 a[href='#icon-shopping-cart']::before {
-    background-position: 0 -9860px;
+	background-position: 0 -9860px;
 }
 
 a[href='#icon-sign-blank']::before {
-    background-position: 0 -9894px;
+	background-position: 0 -9894px;
 }
 
 a[href='#icon-signal']::before {
-    background-position: 0 -9928px;
+	background-position: 0 -9928px;
 }
 
 a[href='#icon-signin']::before {
-    background-position: 0 -9962px;
+	background-position: 0 -9962px;
 }
 
 a[href='#icon-signout']::before {
-    background-position: 0 -9996px;
+	background-position: 0 -9996px;
 }
 
 a[href='#icon-sitemap']::before {
-    background-position: 0 -10030px;
+	background-position: 0 -10030px;
 }
 
 a[href='#icon-skype']::before {
-    background-position: 0 -10064px;
+	background-position: 0 -10064px;
 }
 
 a[href='#icon-smile']::before {
-    background-position: 0 -10098px;
+	background-position: 0 -10098px;
 }
 
 a[href='#icon-sort-by-alphabet-alt']::before {
-    background-position: 0 -10132px;
+	background-position: 0 -10132px;
 }
 
 a[href='#icon-sort-by-alphabet']::before {
-    background-position: 0 -10166px;
+	background-position: 0 -10166px;
 }
 
 a[href='#icon-sort-by-attributes-alt']::before {
-    background-position: 0 -10200px;
+	background-position: 0 -10200px;
 }
 
 a[href='#icon-sort-by-attributes']::before {
-    background-position: 0 -10234px;
+	background-position: 0 -10234px;
 }
 
 a[href='#icon-sort-by-order-alt']::before {
-    background-position: 0 -10268px;
+	background-position: 0 -10268px;
 }
 
 a[href='#icon-sort-by-order']::before {
-    background-position: 0 -10302px;
+	background-position: 0 -10302px;
 }
 
 a[href='#icon-sort-down']::before {
-    background-position: 0 -10336px;
+	background-position: 0 -10336px;
 }
 
 a[href='#icon-sort-up']::before {
-    background-position: 0 -10370px;
+	background-position: 0 -10370px;
 }
 
 a[href='#icon-sort']::before {
-    background-position: 0 -10404px;
+	background-position: 0 -10404px;
 }
 
 a[href='#icon-spinner']::before {
-    background-position: 0 -10438px;
+	background-position: 0 -10438px;
 }
 
 a[href='#icon-stackexchange']::before {
-    background-position: 0 -10472px;
+	background-position: 0 -10472px;
 }
 
 a[href='#icon-star-empty']::before {
-    background-position: 0 -10506px;
+	background-position: 0 -10506px;
 }
 
 a[href='#icon-star-half-empty']::before {
-    background-position: 0 -10540px;
+	background-position: 0 -10540px;
 }
 
 a[href='#icon-star-half-full']::before {
-    background-position: 0 -10574px;
+	background-position: 0 -10574px;
 }
 
 a[href='#icon-star-half']::before {
-    background-position: 0 -10608px;
+	background-position: 0 -10608px;
 }
 
 a[href='#icon-star']::before {
-    background-position: 0 -10642px;
+	background-position: 0 -10642px;
 }
 
 a[href='#icon-step-backward']::before {
-    background-position: 0 -10676px;
+	background-position: 0 -10676px;
 }
 
 a[href='#icon-step-forward']::before {
-    background-position: 0 -10710px;
+	background-position: 0 -10710px;
 }
 
 a[href='#icon-stethoscope']::before {
-    background-position: 0 -10744px;
+	background-position: 0 -10744px;
 }
 
 a[href='#icon-stop']::before {
-    background-position: 0 -10778px;
+	background-position: 0 -10778px;
 }
 
 a[href='#icon-strikethrough']::before {
-    background-position: 0 -10812px;
+	background-position: 0 -10812px;
 }
 
 a[href='#icon-subscript']::before {
-    background-position: 0 -10846px;
+	background-position: 0 -10846px;
 }
 
 a[href='#icon-suitcase']::before {
-    background-position: 0 -10880px;
+	background-position: 0 -10880px;
 }
 
 a[href='#icon-sun']::before {
-    background-position: 0 -10914px;
+	background-position: 0 -10914px;
 }
 
 a[href='#icon-superscript']::before {
-    background-position: 0 -10948px;
+	background-position: 0 -10948px;
 }
 
 a[href='#icon-table']::before {
-    background-position: 0 -10982px;
+	background-position: 0 -10982px;
 }
 
 a[href='#icon-tablet']::before {
-    background-position: 0 -11016px;
+	background-position: 0 -11016px;
 }
 
 a[href='#icon-tag']::before {
-    background-position: 0 -11050px;
+	background-position: 0 -11050px;
 }
 
 a[href='#icon-tags']::before {
-    background-position: 0 -11084px;
+	background-position: 0 -11084px;
 }
 
 a[href='#icon-tasks']::before {
-    background-position: 0 -11118px;
+	background-position: 0 -11118px;
 }
 
 a[href='#icon-terminal']::before {
-    background-position: 0 -11152px;
+	background-position: 0 -11152px;
 }
 
 a[href='#icon-text-height']::before {
-    background-position: 0 -11186px;
+	background-position: 0 -11186px;
 }
 
 a[href='#icon-text-width']::before {
-    background-position: 0 -11220px;
+	background-position: 0 -11220px;
 }
 
 a[href='#icon-th-large']::before {
-    background-position: 0 -11254px;
+	background-position: 0 -11254px;
 }
 
 a[href='#icon-th-list']::before {
-    background-position: 0 -11288px;
+	background-position: 0 -11288px;
 }
 
 a[href='#icon-th']::before {
-    background-position: 0 -11322px;
+	background-position: 0 -11322px;
 }
 
 a[href='#icon-thumbs-down-alt']::before {
-    background-position: 0 -11356px;
+	background-position: 0 -11356px;
 }
 
 a[href='#icon-thumbs-down']::before {
-    background-position: 0 -11390px;
+	background-position: 0 -11390px;
 }
 
 a[href='#icon-thumbs-up-alt']::before {
-    background-position: 0 -11424px;
+	background-position: 0 -11424px;
 }
 
 a[href='#icon-thumbs-up']::before {
-    background-position: 0 -11458px;
+	background-position: 0 -11458px;
 }
 
 a[href='#icon-ticket']::before {
-    background-position: 0 -11492px;
+	background-position: 0 -11492px;
 }
 
 a[href='#icon-time']::before {
-    background-position: 0 -11526px;
+	background-position: 0 -11526px;
 }
 
 a[href='#icon-tint']::before {
-    background-position: 0 -11560px;
+	background-position: 0 -11560px;
 }
 
 a[href='#icon-trash']::before {
-    background-position: 0 -11594px;
+	background-position: 0 -11594px;
 }
 
 a[href='#icon-trello']::before {
-    background-position: 0 -11628px;
+	background-position: 0 -11628px;
 }
 
 a[href='#icon-trophy']::before {
-    background-position: 0 -11662px;
+	background-position: 0 -11662px;
 }
 
 a[href='#icon-truck']::before {
-    background-position: 0 -11696px;
+	background-position: 0 -11696px;
 }
 
 a[href='#icon-tumblr-sign']::before {
-    background-position: 0 -11730px;
+	background-position: 0 -11730px;
 }
 
 a[href='#icon-tumblr']::before {
-    background-position: 0 -11764px;
+	background-position: 0 -11764px;
 }
 
 a[href='#icon-twitter-sign']::before {
-    background-position: 0 -11798px;
+	background-position: 0 -11798px;
 }
 
 a[href='#icon-twitter']::before {
-    background-position: 0 -11832px;
+	background-position: 0 -11832px;
 }
 
 a[href='#icon-umbrella']::before {
-    background-position: 0 -11866px;
+	background-position: 0 -11866px;
 }
 
 a[href='#icon-unchecked']::before {
-    background-position: 0 -11900px;
+	background-position: 0 -11900px;
 }
 
 a[href='#icon-underline']::before {
-    background-position: 0 -11934px;
+	background-position: 0 -11934px;
 }
 
 a[href='#icon-undo']::before {
-    background-position: 0 -11968px;
+	background-position: 0 -11968px;
 }
 
 a[href='#icon-unlink']::before {
-    background-position: 0 -12002px;
+	background-position: 0 -12002px;
 }
 
 a[href='#icon-unlock-alt']::before {
-    background-position: 0 -12036px;
+	background-position: 0 -12036px;
 }
 
 a[href='#icon-unlock']::before {
-    background-position: 0 -12070px;
+	background-position: 0 -12070px;
 }
 
 a[href='#icon-upload-alt']::before {
-    background-position: 0 -12104px;
+	background-position: 0 -12104px;
 }
 
 a[href='#icon-upload']::before {
-    background-position: 0 -12138px;
+	background-position: 0 -12138px;
 }
 
 a[href='#icon-usd']::before {
-    background-position: 0 -12172px;
+	background-position: 0 -12172px;
 }
 
 a[href='#icon-user-md']::before {
-    background-position: 0 -12206px;
+	background-position: 0 -12206px;
 }
 
 a[href='#icon-user']::before {
-    background-position: 0 -12240px;
+	background-position: 0 -12240px;
 }
 
 a[href='#icon-vk']::before {
-    background-position: 0 -12274px;
+	background-position: 0 -12274px;
 }
 
 a[href='#icon-volume-down']::before {
-    background-position: 0 -12308px;
+	background-position: 0 -12308px;
 }
 
 a[href='#icon-volume-off']::before {
-    background-position: 0 -12342px;
+	background-position: 0 -12342px;
 }
 
 a[href='#icon-volume-up']::before {
-    background-position: 0 -12376px;
+	background-position: 0 -12376px;
 }
 
 a[href='#icon-warning-sign']::before {
-    background-position: 0 -12410px;
+	background-position: 0 -12410px;
 }
 
 a[href='#icon-weibo']::before {
-    background-position: 0 -12444px;
+	background-position: 0 -12444px;
 }
 
 a[href='#icon-windows']::before {
-    background-position: 0 -12478px;
+	background-position: 0 -12478px;
 }
 
 a[href='#icon-won']::before {
-    background-position: 0 -12512px;
+	background-position: 0 -12512px;
 }
 
 a[href='#icon-wrench']::before {
-    background-position: 0 -12546px;
+	background-position: 0 -12546px;
 }
 
 a[href='#icon-xing-sign']::before {
-    background-position: 0 -12580px;
+	background-position: 0 -12580px;
 }
 
 a[href='#icon-xing']::before {
-    background-position: 0 -12614px;
+	background-position: 0 -12614px;
 }
 
 a[href='#icon-yen']::before {
-    background-position: 0 -12648px;
+	background-position: 0 -12648px;
 }
 
 a[href='#icon-youtube-play']::before {
-    background-position: 0 -12682px;
+	background-position: 0 -12682px;
 }
 
 a[href='#icon-youtube-sign']::before {
-    background-position: 0 -12716px;
+	background-position: 0 -12716px;
 }
 
 a[href='#icon-youtube']::before {
-    background-position: 0 -12750px;
+	background-position: 0 -12750px;
 }
 
 a[href='#icon-zoom-in']::before {
-    background-position: 0 -12784px;
+	background-position: 0 -12784px;
 }
 
 a[href='#icon-zoom-out']::before {
-    background-position: 0 -12818px;
+	background-position: 0 -12818px;
 } 
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.1 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.1.1 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
