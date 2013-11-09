@@ -587,6 +587,18 @@ body:not(.listing-page):not(.comments-page) .content {
 	display: none;
 }
 
+.domain {
+	position: relative;
+	top: -2px;
+	white-space: nowrap;
+}
+
+.thumbnail {
+	margin: 8px 5px 5px 0px;
+	width: 70px;
+	max-height: 50px;
+}
+
 .link .midcol {
 	margin-right: 8px;
 	margin-left: 0px;
