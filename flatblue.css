@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.1.1 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.2 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -400,14 +400,14 @@ body:not(.search-page) #search input[type="text"] {
 	text-align: center;
 	position: absolute;
 	z-index: 200;
-	width: 165px;
-	left: 13px;
+	width: 270px;
+	right: 13px;
 	background: #ffffff;
 	border: 1px;
 	height: 22px;
 	padding: 2px;
 	letter-spacing: 1px;
-	text-transform: uppercase;
+
 	font-weight: normal !important;
 }
 
@@ -422,15 +422,15 @@ body:not(.search-page) #search input[type="text"] {
 	position: absolute;
 	top: 152px;
 	z-index: 200;
-	left: 5px;
-	width: 159px;
+	right: 13px;
+	width: 266px;
 	padding: 5px;
 }
 
 /* Anouncement text */
 blockquote blockquote blockquote {
 	position: absolute;
-	left: 183px;
+	left: 5px;
 	display: table;
 	background: none;
 	right: 304px;
@@ -575,7 +575,7 @@ blockquote blockquote blockquote {
 */
 
 .content {
-	margin: 68px 0px 0px 0px;
+	margin: 66px 0px 0px 0px;
 }
 
 body:not(.listing-page):not(.comments-page) .content {
@@ -1088,7 +1088,7 @@ sidebar area
 */
 
 body div.side {
-	margin: 68px 0 0 0;
+	margin: 66px 0 0 0;
 	border-left: solid 20px #E9E9E9;
 	border-bottom: solid 20px #E9E9E9;
 }
@@ -2993,6 +2993,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.1.1 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.2 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
