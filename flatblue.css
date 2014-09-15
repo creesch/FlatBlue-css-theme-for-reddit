@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.2 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.3 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -103,6 +103,7 @@ body .side .title,
 .tagline,
 .flat-list,
 .bottommenu,
+#sr-header-area .dropdown.srdrop span.selected.title,
 .submit-page .roundfield #suggested-reddits {
 	font-size: 10px !important;
 }
@@ -315,6 +316,13 @@ body:not(.search-page) #search input[type="text"] {
 
 /* subreddit bar at the top */
 body #sr-header-area, body #sr-header-area a {
+}
+
+#sr-header-area .dropdown.srdrop span.selected.title {
+    font-weight: normal;
+    margin: 0 10px 0 -5px;
+    border: 0;
+
 }
 
 #sr-header-area {
@@ -2993,6 +3001,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.2 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.3 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
