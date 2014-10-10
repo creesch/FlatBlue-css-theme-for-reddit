@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.3 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.4 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -270,6 +270,11 @@ body:not(.search-page) #search input[type="text"] {
 	top: 128px;
 }
 
+body:not(.search-page) #search input[type=submit] {
+    top: 132px;
+}
+
+
 #searchexpando {
 	top: 152px;
 }
@@ -417,6 +422,13 @@ body:not(.search-page) #search input[type="text"] {
 	letter-spacing: 1px;
 
 	font-weight: normal !important;
+}
+
+body:not(.search-page) #search input[type=submit] {
+    position: absolute;
+    z-index: 200;
+    right: 17px;
+    border: 0 !important;
 }
 
 #search {
@@ -3001,6 +3013,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.3 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.4 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
