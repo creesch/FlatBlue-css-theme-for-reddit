@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.4 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.5 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -243,6 +243,23 @@ a[href$="#spoiler"][title]::before {
 	margin: 5px 0px;
 }
 
+.md h1, .commentarea h1, .wiki-page .wiki-page-content .md .wiki h1 { 
+    font-size: 1.6em !important;
+    font-weight: bold;
+}
+
+.md h2, .commentarea h2, .wiki-page .wiki-page-content .md .wiki h2
+{ 
+    font-size: 1.4em;
+    font-weight: bold;    
+    font-style: italic;
+}
+.md h3, .commentarea h3, .wiki-page .wiki-page-content .md .wiki h3
+{ 
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 /*
 ---------------------  
 header area  
@@ -251,7 +268,7 @@ header area
 
 /* Background image and color for the header */
 #header {
-	background: url(%%header-blue%%) no-repeat bottom left;
+	background: url(%%header-blue2%%) no-repeat bottom left;
 	background-color: #479DD3;
 	border: 0;
 }
@@ -274,13 +291,13 @@ body:not(.search-page) #search input[type=submit] {
     top: 132px;
 }
 
-
 #searchexpando {
 	top: 152px;
 }
 
 .side blockquote blockquote blockquote {
 	top: 117px;
+	margin: 0 !important;
 }
 
 #header-bottom-left .tabmenu, .tabmenu.formtab, a[name=content] {
@@ -823,6 +840,11 @@ color: #858585;
 
 /* comments area */
 
+.comment .usertext-body .md, .self .usertext-body .md, .side .md, .md.wiki {
+    line-height: 1.5em !important;
+}
+
+
 .commentarea .flat-list.buttons {
 display: block;
 }
@@ -876,7 +898,10 @@ body .content .md blockquote {
 /* code numbering, based on the css found at /r/modtools */
 .md pre {
     background-color: #F5F5F5 !important;
+    border: 0;
+    overflow: visible !important;
     border-left: 31px solid #4BA6E0;
+    padding: 0;
     position: relative;
     margin-top: 25px;
     line-height: 15px;
@@ -889,7 +914,9 @@ body .content .md blockquote {
 }
 
 .md pre code {
-    padding: 15px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+	padding-left: 5px !important;
     overflow: auto;
     display: block;
     line-height: 15px;
@@ -906,6 +933,7 @@ body .content .md blockquote {
     background: url(%%sprite-icon-16%%) no-repeat top left;
     background-position: 0 -2516px;
 }
+
 
 .md pre:before {
     height: 100%;
@@ -1113,6 +1141,15 @@ body div.side {
 	border-bottom: solid 20px #E9E9E9;
 }
 
+body .side .md p {			
+    margin: 5px 0 !important;			
+}
+
+.side .md .-blocks, .side .md .-lists, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol {
+    line-height: 1.5em!important;
+}
+
+
 /* message the moderators */ 
 .side .sidecontentbox a.helplink {
 	float: none;
@@ -1292,8 +1329,10 @@ h1.redditname:hover {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	font-weight: normal!important;
+	text-decoration: none;
+	margin: 0;
 	display: block;
-	padding-left: 2px;
+	padding: 3px;
 	font-size: 140%;
 	background: #FF6766;
 }
@@ -1312,15 +1351,16 @@ h1.redditname:hover {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	font-weight: normal!important;
+	margin: 0;
 	display: block;
-	padding-left: 2px;
+	padding: 3px;
 	font-size: 140%;
-	background: #68ADCE;
+	background: #5F99CF;
 }
 
 .side h5+blockquote {
 	display: block;
-	background-color: #EAEAFF;
+	background-color: #CEE3F8;
 	border: 0;
 	color: #000!important;
 	margin: 0px 0 5px 0 !important;
@@ -1331,9 +1371,10 @@ h1.redditname:hover {
 	color: #FFF!important;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	font-weight: normal!important;
+	font-weight: normal !important;
+	margin: 0;
 	display: block;
-	padding-left: 2px;
+	padding: 3px;
 	font-size: 140%;
 	background: #97CE68;
 }
@@ -1346,7 +1387,6 @@ h1.redditname:hover {
 	margin: 0px 0 5px 0 !important;
 	padding: 5px;
 }
-
 
 /*
 ---------------------  
@@ -3013,6 +3053,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.4 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.5 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
