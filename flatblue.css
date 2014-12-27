@@ -268,7 +268,7 @@ header area
 
 /* Background image and color for the header */
 #header {
-	background: url(%%header-blue2%%) no-repeat bottom left;
+	background: url(%%header-blue%%) no-repeat bottom left;
 	background-color: #479DD3;
 	border: 0;
 }
