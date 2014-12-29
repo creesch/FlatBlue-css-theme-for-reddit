@@ -39,7 +39,7 @@ Which is nothing more then pointing to the element, and then between the {} stat
 
 ### I still have trouble finding pages where I need to put it. 
 
-Have a look at my ["Creating and moderating a subreddit 101"](http://www.reddit.com/r/creesch/wiki/mod101) guide. 
+Have a look at my ["Creating and moderating a subreddit 101"](https://www.reddit.com/r/creesch/wiki/mod101) guide. 
 
 
 ## Icons 
@@ -47,7 +47,7 @@ Icons are very simply to use, simply do the following
 
     [](#icon-android)
 Which will turn into [](#icon-android)
-A complete list of the available icons can be found [here](/r/FlatBlue/w/icons) 
+A complete list of the available icons can be found [here](https://www.reddit.com/r/creesch/r/FlatBlue/w/icons) 
 
 ## Announcements 
 
