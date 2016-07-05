@@ -1,6 +1,6 @@
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.5 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.6 - (http://www.reddit.com/r/FlatBlue/)
 
 Resources needed:
 - header-blue.png 
@@ -232,7 +232,7 @@ a[href$="#spoiler"][title]::before {
 	margin: 5px 0px;
 }
 
-.md h3, .commentarea h3, .wiki-page .wiki-page-content .md .wiki h3, .sidecontentbox .title h1, .submit-page .title, .submit_text h1 {
+.md h3, .commentarea h3, .wiki-page .wiki-page-content .md .wiki h3, .sidecontentbox .title h1, .submit-page .title:not(textarea), .submit_text h1 {
 	color: #000000 !important;
 	border-bottom: 1px solid #BDBAB4;
 	letter-spacing: 2px;
@@ -3053,6 +3053,6 @@ a[href='#icon-zoom-out']::before {
 
 /* 
 ==========
-FlatBlue reddit CSS Theme v1.5 - (http://www.reddit.com/r/FlatBlue/)
+FlatBlue reddit CSS Theme v1.6 - (http://www.reddit.com/r/FlatBlue/)
 ==========
 */
